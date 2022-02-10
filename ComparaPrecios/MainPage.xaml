@@ -45,6 +45,7 @@
             <Entry MaxLength="9"
                    HorizontalOptions="FillAndExpand"
                    IsReadOnly="True"
+                   Text="c/ 100gr"
                    FontSize="68"
                    Placeholder="-"
                    x:Name="PrecioU"/>
@@ -58,3 +59,5 @@
         </StackLayout>
     </StackLayout>
 </ContentPage>
+
+
