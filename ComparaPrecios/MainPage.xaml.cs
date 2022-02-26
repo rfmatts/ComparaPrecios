@@ -13,16 +13,43 @@ namespace ComparaPrecios
         public MainPage()
         {
             InitializeComponent();
+
         }
+
+        //private async void picker_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //var a = picker.IsFocused;
+        //    string res = (sender as Picker).SelectedItem.ToString();
+        //    Task.Run(() => myTask(res)); //crea y termina el hilo
+        //}
+
+        //private void myTask(string res)
+        //{
+        //    System.Threading.Thread.Sleep(300);
+        //    //var a = picker.IsFocused;
+        //     if (res == "PESO")
+        //    {             
+        //        PesoCant.Placeholder = "Gr.";
+        //        PesoCant.Focus();
+        //    }
+        //    if (res == "CANTIDAD")
+        //    {
+        //        PesoCant.Placeholder = "Cant.";
+        //        PesoCant.Focus();
+        //    }
+
+        //}
+
 
         private void Calcular(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(Precio.Text) && !String.IsNullOrEmpty(Peso.Text))
+            if (!String.IsNullOrEmpty(Precio.Text) && !String.IsNullOrEmpty(PesoCant.Text) && !String.IsNullOrEmpty(PesoOtro.Text))
             {
                 double precio = double.Parse(Precio.Text);
-                double cantidad = double.Parse(Peso.Text);
-                double precioUnit = 100 * precio / cantidad;
-                PrecioU.Text = "$ " + precioUnit.ToString();
+                double pesoCantidad = double.Parse(PesoCant.Text);
+                double pesoOtro = double.Parse(PesoOtro.Text);
+                double precioUnit = pesoOtro * precio / pesoCantidad;
+                PrecioU.Text =  "$ " + precioUnit.ToString().Substring(0, precioUnit.ToString().IndexOf(",") + 3);
             }
             else
             {
@@ -33,8 +60,9 @@ namespace ComparaPrecios
         private void Limpiar(object sender, EventArgs e)
         {
             Precio.Text = "";
-            Peso.Text = "";
+            PesoCant.Text = "";
             PrecioU.Text = "";
+            PesoOtro.Text = "";
         }
     }
 }
