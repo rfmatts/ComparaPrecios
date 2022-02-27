@@ -3,42 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ComparaPrecios.MainPage"
              Visual="Default">
-
     <StackLayout BackgroundColor="Black">
         <StackLayout VerticalOptions = "Start" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
             <Label Text="CALCULADOR DE PRECIOS"
-                   FontAttributes="Bold"
-                   FontSize="42"
-                   TextColor="White"
-                   HorizontalTextAlignment="Center"/>
-            <Label Text="Precio"
-                   FontSize="34"
-                   TextColor="White"
-                   HorizontalTextAlignment="Start"/>
-            <Entry Placeholder="$"
-                   MaxLength="7"
-                   Keyboard="Numeric"
-                   ReturnType="Next"
-                   FontSize="34"
-                   HorizontalOptions="FillAndExpand"
-                   x:Name="Precio"
-                   />
-            <Entry Placeholder="Peso/Cantidad"
-                   MaxLength="7"
-                   Keyboard="Numeric"
-                   ReturnType="Next"
-                   FontSize="34"
-                   HorizontalOptions="FillAndExpand"
-                   x:Name="PesoCant"/>
-            <Entry Placeholder="Peso Otro"
-                   MaxLength="7"
-                   Keyboard="Numeric"
-                   ReturnType="Done"
-                   FontSize="34"
-                   HorizontalOptions="FillAndExpand"
-                   x:Name="PesoOtro"
-                   Completed="Calcular"
-                   />    
+                FontAttributes="Bold"
+                FontSize="42"
+                TextColor="White"
+                HorizontalTextAlignment="Center"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Precio"
+                    FontSize="34"
+                    TextColor="White"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"/>
+                <Entry Placeholder="$"
+                    MaxLength="7"
+                    ReturnType="Next"
+                    FontSize="34"
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="Precio"
+                    Keyboard="Numeric"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Peso/Cant."
+                    FontSize="30"
+                    TextColor="White"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"/>
+                <Entry Placeholder="gr./unidades"
+                    MaxLength="7"
+                    Keyboard="Numeric"
+                    ReturnType="Next"
+                    FontSize="34"
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="PesoCant"/>
+            </StackLayout>
+            <Label Text="Equivalente"
+                HorizontalTextAlignment="Center"
+                TextColor="White"
+                FontSize="34"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Peso/Cant."
+                    FontSize="30"
+                    TextColor="White"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"/>
+                <Entry Placeholder="gr./unidades"
+                    MaxLength="7"
+                    Keyboard="Numeric"
+                    ReturnType="Done"
+                    FontSize="34"
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="PesoOtro"
+                    Completed="Calcular"/>
+            </StackLayout>
+                <Entry MaxLength="9"
+                       HorizontalOptions="FillAndExpand"
+                       IsReadOnly="True"
+                       FontSize="68"
+                       Placeholder="$"
+                       x:Name="PrecioU"/>            
         </StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand"  BackgroundColor="Black">
             <Button Text="LIMPIAR"
@@ -46,19 +70,7 @@
                     Clicked="Limpiar"/>
             <Button Text="CALCULAR"
                     HorizontalOptions= "End"
-                    Clicked="Calcular" />
-        </StackLayout>
-        <StackLayout BackgroundColor="Black">
-            <Label Text="Precio Equivalente"
-                   HorizontalTextAlignment="Start"
-                   TextColor="White"
-                   FontSize="34"/>            
-            <Entry MaxLength="9"
-                   HorizontalOptions="FillAndExpand"
-                   IsReadOnly="True"
-                   FontSize="68"
-                   Placeholder="$"
-                   x:Name="PrecioU"/>
+                    Clicked="Calcular"/>
         </StackLayout>
     </StackLayout>
 </ContentPage>

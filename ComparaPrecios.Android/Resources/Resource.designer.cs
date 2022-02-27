@@ -14,7 +14,7 @@ namespace ComparaPrecios.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.0.11")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.0.155")]
 	public partial class Resource
 	{
 		
@@ -24127,9 +24127,6 @@ namespace ComparaPrecios.Droid
 			
 			// aapt resource value: 0x7F0C0000
 			public const int ic_launcher = 2131492864;
-			
-			// aapt resource value: 0x7F0C0003
-			public const int launcher_foreground = 2131492867;
 			
 			static Mipmap()
 			{

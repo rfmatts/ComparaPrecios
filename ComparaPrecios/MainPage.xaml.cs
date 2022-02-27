@@ -13,33 +13,7 @@ namespace ComparaPrecios
         public MainPage()
         {
             InitializeComponent();
-
         }
-
-        //private async void picker_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    //var a = picker.IsFocused;
-        //    string res = (sender as Picker).SelectedItem.ToString();
-        //    Task.Run(() => myTask(res)); //crea y termina el hilo
-        //}
-
-        //private void myTask(string res)
-        //{
-        //    System.Threading.Thread.Sleep(300);
-        //    //var a = picker.IsFocused;
-        //     if (res == "PESO")
-        //    {             
-        //        PesoCant.Placeholder = "Gr.";
-        //        PesoCant.Focus();
-        //    }
-        //    if (res == "CANTIDAD")
-        //    {
-        //        PesoCant.Placeholder = "Cant.";
-        //        PesoCant.Focus();
-        //    }
-
-        //}
-
 
         private void Calcular(object sender, EventArgs e)
         {
@@ -49,7 +23,14 @@ namespace ComparaPrecios
                 double pesoCantidad = double.Parse(PesoCant.Text);
                 double pesoOtro = double.Parse(PesoOtro.Text);
                 double precioUnit = pesoOtro * precio / pesoCantidad;
-                PrecioU.Text =  "$ " + precioUnit.ToString().Substring(0, precioUnit.ToString().IndexOf(",") + 3);
+                if (precioUnit.ToString().Contains('\u002e'))
+                {
+                    PrecioU.Text = "$ " + precioUnit.ToString().Substring(0, precioUnit.ToString().IndexOf(".") + 3);
+                }
+                else if (precioUnit.ToString().Contains('\u002c'))
+                {
+                    PrecioU.Text = "$ " + precioUnit.ToString().Substring(0, precioUnit.ToString().IndexOf(",") + 3);
+                }
             }
             else
             {

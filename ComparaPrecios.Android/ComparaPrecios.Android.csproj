@@ -56,7 +56,7 @@
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidKeyStore>false</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\POCILGA\AppData\Local\Xamarin\Mono for Android\Keystore\rfmatts\rfmatts.keystore</AndroidSigningKeyStore>
-    <AndroidSigningStorePass>8228264</AndroidSigningStorePass>
+    <AndroidSigningStorePass>dsfm0612</AndroidSigningStorePass>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <MandroidI18n />
     <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
